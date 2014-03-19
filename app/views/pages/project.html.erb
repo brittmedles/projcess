@@ -1,0 +1,11 @@
+<h1><%= @project.project_name %></h1>
+
+<h1>Add another process photo.</h1>
+<form method="post" action="/project/<%= @project.id %>" enctype="multipart/form-data">
+<input type="file" name="file"><br>
+<input type="submit" name="Upload" value="upload">
+</form>
+
+<% @photos.each do |photo| %>
+  <img src="http://localhost:9292/<%= @filename %>" width="612" height="612" alt="<%= @filename %>"/>
+<% end %>

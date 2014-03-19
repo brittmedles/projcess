@@ -18,6 +18,14 @@ Projcess::Application.routes.draw do
   
   get "/join_project/:id" => 'pages#join_project'
   
+  post "/find_project/:id" => 'pages#find_project'
+  
+  get "/add_photo/:id" => 'pages#add_photo'
+  
+  post "/project/:id" => 'pages#project'
+  
+  
+  
   
   
   

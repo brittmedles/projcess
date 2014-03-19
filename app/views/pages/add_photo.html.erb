@@ -1,0 +1,6 @@
+<h1>Add a process photo to <%= @project.project_name %>.</h1>
+
+<form method="post" action="/project/<%= @project.id %>" enctype="multipart/form-data">
+<input type="file" name="file"><br>
+<input type="submit" name="Upload" value="upload">
+</form>
