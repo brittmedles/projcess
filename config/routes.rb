@@ -2,7 +2,7 @@ Projcess::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
   
-  get "/" => 'pages#home'
+  get "home" => 'pages#home'
   
   post "signup" => 'pages#new_user'
   
@@ -10,27 +10,22 @@ Projcess::Application.routes.draw do
   
   get "user/:id" => 'pages#profile'
   
-  post "/update/:id" => 'pages#update'
+  post "update/:id" => 'pages#update'
   
-  get "/add_project/:id" => 'pages#add_project'
+  get "add_project/:id" => 'pages#add_project'
   
-  post "/save_project/:id" => 'pages#save_project'
+  post "save_project/:id" => 'pages#save_project'
   
-  get "/join_project/:id" => 'pages#join_project'
+  get "join_project/:id" => 'pages#join_project'
   
-  post "/find_project/:id" => 'pages#find_project'
+  post "find_project/:id" => 'pages#find_project'
   
-  get "/add_photo/:id" => 'pages#add_photo'
+  get "add_photo/:id" => 'pages#add_photo'
   
-  post "/project/:id" => 'pages#project'
-  
-  
+  post "project/:id" => 'pages#project'
   
   
   
-  
-  
-
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
