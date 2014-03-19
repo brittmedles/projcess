@@ -1,0 +1,21 @@
+<h1><%= @user.user_name %></h1>
+
+<form method="post" action="/update/<%= @user.id %>">
+  <p>
+    Name:
+    <input type="text" name="user_name" value="<%= @user.user_name %>"><br>
+	<% if @project == nil %>
+	Project:
+	<% else %>
+	Project: <a href="/add_photo/<%= @project.id %>"><%= @user.project_name %></a>
+	<% end %>
+  </p>
+    <input type="submit" value="Submit">
+</form>
+
+  <p>
+    <a href="/add_project/<%= @user.id %>">Start a new project.</a>
+  </p>
+  <p>
+    <a href="/join_project/<%= @user.id %>">Or, join an existing project.</a>
+  </p>

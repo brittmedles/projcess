@@ -1,0 +1,27 @@
+<h1>See all of our projects:</h1>
+
+<% @projects.each do |project| %>
+  <p>
+    <strong><%= project.project_name %></strong>
+  </p>
+<% end %>
+
+<hr>
+
+<h1>Sign up to start or join a project:</h1>
+<form method="post" action="/signup">
+  <p>
+    Name:
+    <input type="text" name="user_name">
+  </p>
+  <input type="submit" value="Submit">
+</form>
+
+<h1>Or, login:</h1>
+<form method="get" action="/login">
+  <p>
+    Name:
+    <input type="text" name="user_name">
+  </p>
+  <input type="submit" value="Submit">
+</form>
