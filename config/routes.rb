@@ -19,7 +19,7 @@ Projcess::Application.routes.draw do
   
   # Refactoring
   
-  resources :users, :projects, :photos, :questions, :answers
+  resources :users, :projects, :photos
   
   get "/oauth/connect" => 'instagram#connect'
   get "/oauth/callback" => 'instagram#callback'

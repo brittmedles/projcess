@@ -1,3 +1,7 @@
+# Instagram code:
+enable :sessions
+CALLBACK_URL = "http://localhost:9292/oauth/callback"
+
 class InstagramController < ApplicationController::Base
   
   def connect
