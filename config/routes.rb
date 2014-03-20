@@ -1,7 +1,3 @@
-# Instagram code:
-# enable :sessions
-# CALLBACK_URL = "http://localhost:9292/oauth/callback"
-
 Projcess::Application.routes.draw do
   
   get "home" => 'pages#home'
@@ -21,9 +17,7 @@ Projcess::Application.routes.draw do
   
   resources :users, :projects, :photos
   
-  get "/oauth/connect" => 'instagram#connect'
-  get "/oauth/callback" => 'instagram#callback'
-  
-
+  get "/oauth/connect" => 'integrations#connect'
+  get "/oauth/callback" => 'integrations#callback'
   
 end

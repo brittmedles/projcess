@@ -85,7 +85,7 @@ class PagesController < ApplicationController::Base
           redirect_to("/add_photo/#{project.id}") 
         end
         
-    Instagram code:
+    # Instagram code:
     client = Instagram.client(:access_token => session[:access_token])
     user = client.user
      
