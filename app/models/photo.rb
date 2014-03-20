@@ -1,3 +1,6 @@
 class Photo < ActiveRecord::Base
-  attr_accessible :filename, :proj_id, :timestamp
+  attr_accessible :project_id, :user_id, :filename
+  
+  belongs_to :project
+  belongs_to :user
 end

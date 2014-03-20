@@ -1,4 +1,6 @@
-class PagesController < ActionController::Base
+
+
+class PagesController < ApplicationController::Base
   
   def home
     @projects = Project.all
@@ -82,6 +84,13 @@ class PagesController < ActionController::Base
         else
           redirect_to("/add_photo/#{project.id}") 
         end
+        
+    Instagram code:
+    client = Instagram.client(:access_token => session[:access_token])
+    user = client.user
+     
   end
+  
+  
   
 end

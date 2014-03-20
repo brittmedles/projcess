@@ -1,3 +1,6 @@
 class Project < ActiveRecord::Base
-  attr_accessible :project_name, :user_id
+  attr_accessible :name
+  
+  has_and_belongs_to_many :users
+  has_many :photos
 end

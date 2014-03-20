@@ -9,3 +9,13 @@
 <% @photos.each do |photo| %>
   <img src="http://localhost:9292/<%= @filename %>" width="612" height="612" alt="<%= @filename %>"/>
 <% end %>
+
+
+  <!-- Move to project.erb file:
+  
+  <a href="/oauth/connect">Connect with Instagram</a>
+  
+  <% for media_item in client.user_recent_media %>
+    <img src='#{media_item.images.thumbnail.url}'>
+  <% end %>  -->
+
