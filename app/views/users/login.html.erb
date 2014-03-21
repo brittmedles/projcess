@@ -1,0 +1,11 @@
+<h1>Login to your account:</h1>
+
+<p>Name:</p>
+<%= form_for @user do |f| %>
+  <p>
+    <%= f.label :name %>
+	<%= f.text_field :name %>
+  </p>
+  
+  <%= f.submit %>
+<% end %>

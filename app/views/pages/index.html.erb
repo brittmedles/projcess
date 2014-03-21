@@ -1,0 +1,15 @@
+<h1>Sign up to start or join a project:</h1>
+
+<p>Name:</p>
+<%= form_for @user do |f| %>
+  <p>
+    <%= f.label :name %>
+	<%= f.text_field :name %>
+  </p>
+  
+  <%= f.submit %>
+<% end %>
+
+<h1>Already working on a project:</h1>
+
+<%= link_to(“Login”, :login) %>

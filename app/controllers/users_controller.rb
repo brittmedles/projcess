@@ -1,24 +1,26 @@
 class UsersController < ApplicationController::Base
   
   def index
-    @students = Student.all
+    @users = User.all
   end
  
   def show
-    @student = Student.find(params[:id])
+    @user = User.find_by_name(params[:name])
+    @projects = @user.projects
+    # @user = User.find(params[:id])
   end
  
   def new
-    @student = Student.new()
+    @user = User.new()
   end
   
   def create
-    @student = Student.new(params[:student])
+    @user = User.new(params[:user])
    
-    if @student.save # If this fails to save, it returns FALSE.
+    if @user.save # If this fails to save, it returns FALSE.
      
       # For successful saves:
-      redirect_to(:students)
+      redirect_to(:users)
      
     else
       # Show the errors to the user.
@@ -27,23 +29,23 @@ class UsersController < ApplicationController::Base
   end
  
   def edit
-    @student = Student.find(params[:id])
+    @user = User.find(params[:id])
   end
   
   def update
-    @student = Student.find(params[:id])
+    @user = User.find(params[:id])
    
-    @student.update_attributes({:name => params[:name]})
+    @user.update_attributes({:name => params[:name]})
    
-    redirect_to(student_path(@student.id))
+    redirect_to(user_path(@user.id))
   end
  
   def destroy
-    @student = Student.find(params[:id])
+    @user = User.find(params[:id])
    
-    @student.delete
+    @user.delete
    
-    redirect_to(:students)
+    redirect_to(:users)
   end
   
 end

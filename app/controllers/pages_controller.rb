@@ -2,6 +2,11 @@
 
 class PagesController < ApplicationController::Base
   
+  def index
+    
+  end
+  
+  
   def home
     @projects = Project.all
   end
@@ -14,7 +19,6 @@ class PagesController < ApplicationController::Base
   
   def login
     user_name = params[:user_name]
-  
     user = User.find_by_user_name(params[:user_name])
     redirect_to("/user/#{user.id}")
   end

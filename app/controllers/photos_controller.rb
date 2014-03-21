@@ -1,24 +1,24 @@
 class PhotosController < ApplicationController::Base
   
   def index
-    @students = Student.all
+    @photos = Photo.all
   end
  
   def show
-    @student = Student.find(params[:id])
+    @photo = Photo.find(params[:id])
   end
  
   def new
-    @student = Student.new()
+    @photo = Photo.new()
   end
   
   def create
-    @student = Student.new(params[:student])
+    @photo = Photo.new(params[:photo])
    
-    if @student.save # If this fails to save, it returns FALSE.
+    if @photo.save # If this fails to save, it returns FALSE.
      
       # For successful saves:
-      redirect_to(:students)
+      redirect_to(:photos)
      
     else
       # Show the errors to the user.
@@ -27,23 +27,23 @@ class PhotosController < ApplicationController::Base
   end
  
   def edit
-    @student = Student.find(params[:id])
+    @photo = Photo.find(params[:id])
   end
   
   def update
-    @student = Student.find(params[:id])
+    @photo = Photo.find(params[:id])
    
-    @student.update_attributes({:name => params[:name]})
+    @photo.update_attributes({:name => params[:name]})
    
-    redirect_to(student_path(@student.id))
+    redirect_to(photo_path(@photo.id))
   end
  
   def destroy
-    @student = Student.find(params[:id])
+    @photo = Photo.find(params[:id])
    
-    @student.delete
+    @photo.delete
    
-    redirect_to(:students)
+    redirect_to(:photos)
   end
   
 end

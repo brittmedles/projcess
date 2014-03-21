@@ -1,24 +1,24 @@
 class ProjectsController < ApplicationController::Base
   
   def index
-    @students = Student.all
+    @projects = Project.all
   end
  
   def show
-    @student = Student.find(params[:id])
+    @project = Project.find(params[:id])
   end
  
   def new
-    @student = Student.new()
+    @project = Project.new()
   end
   
   def create
-    @student = Student.new(params[:student])
+    @project = Project.new(params[:project])
    
-    if @student.save # If this fails to save, it returns FALSE.
+    if @project.save # If this fails to save, it returns FALSE.
      
       # For successful saves:
-      redirect_to(:students)
+      redirect_to(:projects)
      
     else
       # Show the errors to the user.
@@ -27,21 +27,21 @@ class ProjectsController < ApplicationController::Base
   end
  
   def edit
-    @student = Student.find(params[:id])
+    @project = Project.find(params[:id])
   end
   
   def update
-    @student = Student.find(params[:id])
+    @project = Project.find(params[:id])
    
-    @student.update_attributes({:name => params[:name]})
+    @project.update_attributes({:name => params[:name]})
    
-    redirect_to(student_path(@student.id))
+    redirect_to(project_path(@project.id))
   end
  
   def destroy
-    @student = Student.find(params[:id])
+    @project = Project.find(params[:id])
    
-    @student.delete
+    @project.delete
    
     redirect_to(:students)
   end

@@ -1,0 +1,38 @@
+<!-- This should be a partial w/ the edit view -->
+
+<h1><%= @user.name %></h1>
+
+<form method="post" action="/update/<%= @user.id %>">
+  <p>
+    Name:
+    <input type="text" name="name" value="<%= @user.name %>"><br>
+	<% if @project == nil %>
+	Project:
+	<% else %>
+	Project: <a href="/add_photo/<%= @project.id %>"><%= @project.name %></a>
+	<% end %>
+  </p>
+    <input type="submit" value="Submit">
+</form>
+
+  <p>
+    <a href="/add_project/<%= @user.id %>">Start a new project.</a>
+  </p>
+  <p>
+    <a href="/join_project/<%= @user.id %>">Or, join an existing project.</a>
+  </p>
+  
+  <h1><%= @user.name %></h1>
+  
+  <!-- Fill the @projects array in controller? -->
+  <p>Project(s):</p>
+  <% @projects.each do |project| %>
+    <p>
+      <%= link_to(project.name, project_path(project.id)) %> 
+    </p>
+  <% end %>
+
+  <%= link_to("Edit", edit_user_path(@user.id)) %> | 
+  <%= link_to("Delete", user_path(@user.id), :method => "DELETE") %>
+  
+  
